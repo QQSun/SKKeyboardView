@@ -35,7 +35,6 @@
         magnifierContent.textColor = [UIColor grayColor];
         magnifierContent.textAlignment = NSTextAlignmentCenter;
         [magnifier addSubview:magnifierContent];
-//        magnifierContent.backgroundColor = [UIColor greenColor];
         _magnifierContent = magnifierContent;
         
     }
@@ -43,7 +42,6 @@
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    NSLog(@"开始点击");
     if (self.isShowMagnifier == false) {
         return;
     }
@@ -59,7 +57,6 @@
 }
 
 - (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    NSLog(@"结束点击");
     _magnifier.hidden = true;
 }
 
@@ -79,26 +76,14 @@
     CGRect rect = [cell convertRect:cell.frame toView:self];
     _magnifier.hidden = NO;
     _magnifierContent.text = cell.keyText;
-    _magnifier.frame = CGRectMake(-rect.size.width / 2.0 + rect.origin.x / 2.0, -rect.size.height + rect.origin.y / 2.0, rect.size.width * 2, rect.size.height * 2);
-    _magnifierContent.frame = CGRectMake(0, 5, rect.size.width * 2, rect.size.height);
+    _magnifier.frame = CGRectMake(-rect.size.width / 2 - 2 + rect.origin.x / 2.0, -rect.size.height + 2 + rect.origin.y / 2.0, rect.size.width * 2 + 4, rect.size.height * 2);
+    _magnifierContent.frame = CGRectMake(2, 20, rect.size.width * 2, rect.size.height);
     
+    [_magnifierContent.layer removeAllAnimations];
+    [UIView animateWithDuration:0.2 animations:^{
+        _magnifierContent.frame = CGRectMake(2, 5, rect.size.width * 2, rect.size.height);
+    }];
     
-//    _magnifierContent.top = 20;
-//    
-//    [_magnifierContent.layer removeAllAnimations];
-//    NSTimeInterval dur = 0.1;
-//    [UIView animateWithDuration:dur delay:0 options:UIViewAnimationOptionCurveEaseIn animations:^{
-//        _magnifierContent.top = 3;
-//    } completion:^(BOOL finished) {
-//        [UIView animateWithDuration:dur delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
-//            _magnifierContent.top = 6;
-//        } completion:^(BOOL finished) {
-//            [UIView animateWithDuration:dur delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
-//                _magnifierContent.top = 5;
-//            } completion:^(BOOL finished) {
-//            }];
-//        }];
-//    }];
 }
 
 
