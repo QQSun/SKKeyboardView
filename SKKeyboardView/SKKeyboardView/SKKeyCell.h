@@ -18,7 +18,7 @@
 @property (nonatomic, strong) UIImage *keyImagePressed;
 @property (nonatomic, strong) UIColor *keyColor;
 @property (nonatomic, strong) UIColor *keyTextColor;
-
+@property (nonatomic, strong) UIButton *button;
 
 
 @end

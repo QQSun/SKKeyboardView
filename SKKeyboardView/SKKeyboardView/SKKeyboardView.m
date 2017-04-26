@@ -7,6 +7,7 @@
 //
 
 #import "SKKeyboardView.h"
+#import "SKCollectionView.h"
 #import "SKKeyboardViewLayout.h"
 #import "SKSymbolKeyCell.h"
 @interface SKKeyboardView () <UICollectionViewDataSource, UICollectionViewDelegate>
@@ -21,7 +22,7 @@
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
         SKKeyboardViewLayout *layout = [[SKKeyboardViewLayout alloc] init];
-        UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:self.bounds collectionViewLayout:layout];
+        SKCollectionView *collectionView = [[SKCollectionView alloc] initWithFrame:self.bounds collectionViewLayout:layout];
         collectionView.backgroundColor = [UIColor colorWithRed:200/256.0 green:203/256.0 blue:211/256.0 alpha:1];
         collectionView.delegate = self;
         collectionView.dataSource = self;
@@ -74,13 +75,6 @@
         
     }else{
         SKCommonKeyCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"common" forIndexPath:indexPath];
-        __weak typeof(cell) weakCell = cell;
-        cell.clickedBlock = ^{
-            if (self.delegate && [self.delegate respondsToSelector:@selector(keyboardView:didClickedCommonItem:)]) {
-                [self.delegate keyboardView:self didClickedCommonItem:weakCell];
-            }
-        };
-        
         cell.keyText = self.infoArray[indexPath.section][indexPath.row];
         return cell;
     }
@@ -96,12 +90,13 @@
     return 4;
 }
 
-//- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-//    if (indexPath.section == 3 && indexPath.row == 0) {
-//        _isChineseBoard = !_isChineseBoard;
-//        [collectionView reloadData];
-//    }
-//}
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    /// 此处如果不是SKCommonKeyCell类型的cell, 其点击事件会被cell上的按钮拦截. 不会进如该方法
+    SKCommonKeyCell *cell = (SKCommonKeyCell *)[collectionView cellForItemAtIndexPath:indexPath];
+    if (self.delegate && [self.delegate respondsToSelector:@selector(keyboardView:didClickedCommonItem:)]) {
+        [self.delegate keyboardView:self didClickedCommonItem:(SKCommonKeyCell *)cell];
+    }
+}
 
 
 

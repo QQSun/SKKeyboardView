@@ -8,13 +8,11 @@
 
 #import "SKKeyCell.h"
 #define kPadding 3
-@interface SKKeyCell ()
 
-@property (nonatomic, strong) UIButton *button;
+@interface SKKeyCell ()
 
 
 @end
-
 
 @implementation SKKeyCell
 
@@ -32,8 +30,11 @@
         [button setBackgroundImage:self.keyImage forState:UIControlStateNormal];
         [button setBackgroundImage:self.keyImagePressed forState:UIControlStateHighlighted];
         [button addTarget:self action:@selector(clicked:) forControlEvents:UIControlEventTouchUpInside];
+        button.userInteractionEnabled = false;
         [self.contentView addSubview:button];
         _button = button;
+        
+
     }
     return self;
 }
@@ -60,11 +61,9 @@
 - (void)setKeyText:(NSString *)keyText {
     _keyText = keyText;
     if ([keyText isEqualToString:@"I"] || [keyText isEqualToString:@"O"]) {
-        _button.userInteractionEnabled = false;
         [_button setBackgroundImage:[[UIImage imageNamed:@"9key1"] resizableImageWithCapInsets:UIEdgeInsetsMake(10, 10, 10, 10) resizingMode:UIImageResizingModeStretch] forState:UIControlStateNormal];
         [_button setBackgroundImage:[[UIImage imageNamed:@"9key1"] resizableImageWithCapInsets:UIEdgeInsetsMake(10, 10, 10, 10) resizingMode:UIImageResizingModeStretch] forState:UIControlStateHighlighted];
     }else{
-        _button.userInteractionEnabled = true;
         [_button setBackgroundImage:self.keyImage forState:UIControlStateNormal];
         [_button setBackgroundImage:self.keyImagePressed forState:UIControlStateHighlighted];
     }
@@ -102,5 +101,6 @@
         self.clickedBlock();
     }
 }
+
 
 @end

@@ -13,6 +13,7 @@
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
         self.keyTextFont = [UIFont systemFontOfSize:18];
+        self.button.userInteractionEnabled = true;
     }
     return self;
 }

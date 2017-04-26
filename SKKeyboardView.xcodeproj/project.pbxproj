@@ -29,6 +29,8 @@
 		8447E8C41EB071E700E886B2 /* write_delete_press@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8447E8C01EB071E700E886B2 /* write_delete_press@3x.png */; };
 		8447E8C51EB071E700E886B2 /* write_delete@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8447E8C11EB071E700E886B2 /* write_delete@2x.png */; };
 		8447E8C61EB071E700E886B2 /* write_delete@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8447E8C21EB071E700E886B2 /* write_delete@3x.png */; };
+		8447E8CC1EB0889800E886B2 /* qwerty_key_pop_p1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8447E8CB1EB0889800E886B2 /* qwerty_key_pop_p1@2x.png */; };
+		8447E8CF1EB089E400E886B2 /* SKCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8447E8CE1EB089E400E886B2 /* SKCollectionView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +66,9 @@
 		8447E8C01EB071E700E886B2 /* write_delete_press@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "write_delete_press@3x.png"; sourceTree = "<group>"; };
 		8447E8C11EB071E700E886B2 /* write_delete@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "write_delete@2x.png"; sourceTree = "<group>"; };
 		8447E8C21EB071E700E886B2 /* write_delete@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "write_delete@3x.png"; sourceTree = "<group>"; };
+		8447E8CB1EB0889800E886B2 /* qwerty_key_pop_p1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "qwerty_key_pop_p1@2x.png"; sourceTree = "<group>"; };
+		8447E8CD1EB089E400E886B2 /* SKCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKCollectionView.h; sourceTree = "<group>"; };
+		8447E8CE1EB089E400E886B2 /* SKCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKCollectionView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +129,8 @@
 				8447E7381EB0398900E886B2 /* images */,
 				8447E7261EB031E800E886B2 /* SKKeyboardView.h */,
 				8447E7271EB031E800E886B2 /* SKKeyboardView.m */,
+				8447E8CD1EB089E400E886B2 /* SKCollectionView.h */,
+				8447E8CE1EB089E400E886B2 /* SKCollectionView.m */,
 				8447E7291EB033A100E886B2 /* SKKeyboardViewLayout.h */,
 				8447E72A1EB033A100E886B2 /* SKKeyboardViewLayout.m */,
 				8447E72C1EB0344500E886B2 /* SKKeyCell.h */,
@@ -151,6 +158,7 @@
 				8447E8C21EB071E700E886B2 /* write_delete@3x.png */,
 				8447E8BF1EB071E700E886B2 /* write_delete_press@2x.png */,
 				8447E8C01EB071E700E886B2 /* write_delete_press@3x.png */,
+				8447E8CB1EB0889800E886B2 /* qwerty_key_pop_p1@2x.png */,
 			);
 			path = images;
 			sourceTree = "<group>";
@@ -221,6 +229,7 @@
 				8447E8B61EB0713F00E886B2 /* 9key1@3x.png in Resources */,
 				8447E71B1EB0310800E886B2 /* Assets.xcassets in Resources */,
 				8447E8B11EB0713F00E886B2 /* 9key_press@2x.png in Resources */,
+				8447E8CC1EB0889800E886B2 /* qwerty_key_pop_p1@2x.png in Resources */,
 				8447E8C31EB071E700E886B2 /* write_delete_press@2x.png in Resources */,
 				8447E7191EB0310800E886B2 /* Main.storyboard in Resources */,
 				8447E8C41EB071E700E886B2 /* write_delete_press@3x.png in Resources */,
@@ -241,6 +250,7 @@
 				8447E7281EB031E800E886B2 /* SKKeyboardView.m in Sources */,
 				8447E72B1EB033A100E886B2 /* SKKeyboardViewLayout.m in Sources */,
 				8447E7131EB0310800E886B2 /* AppDelegate.m in Sources */,
+				8447E8CF1EB089E400E886B2 /* SKCollectionView.m in Sources */,
 				8447E7311EB0347200E886B2 /* SKCommonKeyCell.m in Sources */,
 				8447E7101EB0310800E886B2 /* main.m in Sources */,
 				8447E7341EB0348700E886B2 /* SKDeleteKeyCell.m in Sources */,

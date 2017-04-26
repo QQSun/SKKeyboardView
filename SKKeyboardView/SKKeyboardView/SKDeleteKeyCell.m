@@ -12,6 +12,7 @@
 
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
+        self.button.userInteractionEnabled = true;
         self.keyImage = [UIImage imageNamed:@"write_delete"];
         self.keyImagePressed = [UIImage imageNamed:@"write_delete_press"];
     }
