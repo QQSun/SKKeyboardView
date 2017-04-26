@@ -58,6 +58,12 @@
 
 - (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     _magnifier.hidden = true;
+    if (self.delegate && [self.delegate respondsToSelector:@selector(collectionView:didSelectItemAtIndexPath:)]) {
+        UITouch *touch = touches.anyObject;
+        CGPoint point = [touch locationInView:self];
+        NSIndexPath *indexPath = [self indexPathForItemAtPoint:point];
+        [self.delegate collectionView:self didSelectItemAtIndexPath:indexPath];
+    }
 }
 
 - (SKCommonKeyCell *)cellForTouches:(NSSet<UITouch *> *)touches {

@@ -29,10 +29,15 @@
         [collectionView registerClass:[SKCommonKeyCell class] forCellWithReuseIdentifier:@"common"];
         [collectionView registerClass:[SKDeleteKeyCell class] forCellWithReuseIdentifier:@"delete"];
         [collectionView registerClass:[SKSymbolKeyCell class] forCellWithReuseIdentifier:@"symbol"];
-        
         [self addSubview:collectionView];
+        _collectionView = collectionView;
     }
     return self;
+}
+
+- (void)setIsChineseBoard:(BOOL)isChineseBoard {
+    _isChineseBoard = isChineseBoard;
+    [_collectionView reloadData];
 }
 
 - (NSArray *)infoArray {
