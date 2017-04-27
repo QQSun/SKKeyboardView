@@ -12,13 +12,15 @@
 
 @property (nonatomic, copy) void (^clickedBlock)();
 
-@property (nonatomic, copy) NSString *keyText;
-@property (nonatomic, strong) UIFont *keyTextFont;
-@property (nonatomic, strong) UIImage *keyImage;
-@property (nonatomic, strong) UIImage *keyImagePressed;
-@property (nonatomic, strong) UIColor *keyColor;
-@property (nonatomic, strong) UIColor *keyTextColor;
-@property (nonatomic, strong) UIButton *button;
+@property (nonatomic, copy) NSString *keyText;  ///按键文字
+@property (nonatomic, strong) UIFont *keyTextFont;  ///按键字体
+@property (nonatomic, strong) UIImage *keyImage;    ///按键图片
+@property (nonatomic, strong) UIImage *keyImagePressed; ///按键点击后的图片
+@property (nonatomic, strong) UIImage *keyBackgroundImage;  ///按键背景图片
+@property (nonatomic, strong) UIImage *keyBackgroundImagePressed;   ///按键点击状态背景图
+@property (nonatomic, strong) UIColor *keyColor;    ///按键颜色
+@property (nonatomic, strong) UIColor *keyTextColor;    ///按键文字颜色
+@property (nonatomic, strong) UIButton *button; ///按键上用于显示文字和图标的按钮
 
 
 @end
